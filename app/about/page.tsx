@@ -65,7 +65,7 @@ export default function AboutPage() {
                 />
                 <motion.div
                   className="absolute inset-3 rounded-full border border-border overflow-hidden"
-                  style={{ boxShadow: "0 0 40px rgba(212,168,67,0.15)" }}
+                  style={{ boxShadow: "0 0 40px rgba(203,162,69,0.15)" }}
                 >
                   <Image
                     src="/images/habibullah.jpg"
@@ -85,7 +85,7 @@ export default function AboutPage() {
               {/* Contact card */}
               <motion.div
                 className="w-full glass-card p-5 space-y-3"
-                whileHover={{ borderColor: "rgba(212,168,67,0.3)" }}
+                whileHover={{ borderColor: "rgba(203,162,69,0.3)" }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-xs font-mono text-text-muted tracking-widest uppercase mb-3">Contact Info</div>

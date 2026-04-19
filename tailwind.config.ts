@@ -15,10 +15,10 @@ const config: Config = {
         elevated: "#1c1c2e",
         border: "#252538",
         gold: {
-          DEFAULT: "#d4a843",
-          light: "#e8c167",
-          dark: "#b8902f",
-          muted: "#d4a84330",
+          DEFAULT: "#cba245",
+          light: "#dfbe73",
+          dark: "#b3882f",
+          muted: "#cba24530",
         },
         dream: {
           DEFAULT: "#7c6ff0",
@@ -41,7 +41,7 @@ const config: Config = {
         "noise":
           "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E\")",
         "radial-gold":
-          "radial-gradient(ellipse at center, rgba(212,168,67,0.15) 0%, transparent 70%)",
+          "radial-gradient(ellipse at center, rgba(203,162,69,0.15) 0%, transparent 70%)",
         "radial-dream":
           "radial-gradient(ellipse at center, rgba(124,111,240,0.12) 0%, transparent 70%)",
         "hero-gradient":
@@ -50,11 +50,11 @@ const config: Config = {
           "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%, rgba(255,255,255,0.02) 100%)",
       },
       boxShadow: {
-        gold: "0 0 40px rgba(212,168,67,0.15), 0 0 80px rgba(212,168,67,0.05)",
-        "gold-sm": "0 0 20px rgba(212,168,67,0.2)",
+        gold: "0 0 40px rgba(203,162,69,0.15), 0 0 80px rgba(203,162,69,0.05)",
+        "gold-sm": "0 0 20px rgba(203,162,69,0.2)",
         dream: "0 0 40px rgba(124,111,240,0.15), 0 0 80px rgba(124,111,240,0.05)",
         card: "0 4px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05) inset",
-        "card-hover": "0 8px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,168,67,0.2)",
+        "card-hover": "0 8px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(203,162,69,0.2)",
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",

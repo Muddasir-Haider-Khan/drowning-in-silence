@@ -103,7 +103,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         className="glass-card p-0 flex gap-0 items-start overflow-hidden"
         whileHover={{
           y: -2,
-          borderColor: "rgba(212,168,67,0.3)",
+          borderColor: "rgba(203,162,69,0.3)",
           transition: { duration: 0.2, ease: "easeOut" },
         }}
         whileTap={{ scale: 0.99 }}

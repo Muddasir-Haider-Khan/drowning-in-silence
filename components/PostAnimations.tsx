@@ -222,7 +222,7 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          whileHover={{ borderColor: "rgba(212,168,67,0.3)" }}
+          whileHover={{ borderColor: "rgba(203,162,69,0.3)" }}
         >
           <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-border flex-shrink-0">
             <Image

@@ -56,7 +56,7 @@ export default function HomePage() {
             className="pointer-events-none absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(212,168,67,1) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,67,1) 1px, transparent 1px)",
+                "linear-gradient(rgba(203,162,69,1) 1px, transparent 1px), linear-gradient(90deg, rgba(203,162,69,1) 1px, transparent 1px)",
               backgroundSize: "80px 80px",
             }}
           />
@@ -100,7 +100,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.45 }}
-                style={{ textShadow: "0 0 40px rgba(212,168,67,0.4)" }}
+                style={{ textShadow: "0 0 40px rgba(203,162,69,0.4)" }}
               >
                 In Silence
               </motion.span>
