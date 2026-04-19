@@ -112,7 +112,7 @@ export default function CriticalReflectionPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-text-muted text-sm max-w-xl mx-auto leading-relaxed"
             >
-              A 1600-word analytical essay examining the "Drowning in Silence" A2 Media Studies short film project — exploring representation, branding, audience engagement, and research-informed practice.
+              A 1600-word analytical essay examining the &quot;Drowning in Silence&quot; A2 Media Studies short film project — exploring representation, branding, audience engagement, and research-informed practice.
             </motion.p>
 
             {/* Word count badge */}
@@ -232,7 +232,7 @@ export default function CriticalReflectionPage() {
               <p className="text-sm text-text-muted">
                 Written by{" "}
                 <span className="text-gold font-semibold">Habibullah Wahaaj</span>
-                {" "}· A2 Media Studies · "Drowning in Silence"
+                {" "}· A2 Media Studies · &quot;Drowning in Silence&quot;
               </p>
               <div className="flex items-center justify-center gap-3 flex-wrap pt-1">
                 <span className="badge-muted text-xs">~{wordCount.toLocaleString()} words</span>

@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+
 import { getPostBySlug, getAdjacentPosts, posts } from "@/data/posts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PostAnimations from "@/components/PostAnimations";
-import { Calendar, Clock, Tag } from "lucide-react";
+
 import type { Metadata } from "next";
 
 interface Props {
