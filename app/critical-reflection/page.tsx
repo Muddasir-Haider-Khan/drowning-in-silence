@@ -1,86 +1,19 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AnimatedSection, { StaggerContainer, StaggerChild, FadeIn } from "@/components/AnimatedSection";
+import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
-import { BookText, ChevronRight } from "lucide-react";
+import { BookText } from "lucide-react";
 
-const questions = [
-  {
-    number: "01",
-    title: "How do your products represent social groups or issues?",
-    color: "text-gold",
-    borderColor: "border-gold/40",
-    badgeClass: "badge-gold",
-    body: [
-      `"Drowning in Silence" is, at its core, a film about the experience of silent psychological suffering — a theme deeply rooted in how contemporary society fails to recognise the quiet distress experienced by young people. The title itself is the most immediate representation of this social issue: to "drown" suggests an overwhelming, life-threatening force, while "in silence" implies that this is a struggle endured alone, unacknowledged, and invisible to those around the sufferer. Through the film's psychological dream-within-a-dream narrative, in which the protagonist repeatedly attempts to turn off a dripping tap but wakes up trapped inside yet another layer of the same dream, the product establishes an unflinching and empathetic portrait of helplessness — the feeling of trying to fix something small but fundamentally being unable to, no matter how many times you attempt it.`,
+const wordCount = 1600;
 
-      `This narrative structure directly mirrors a broader social conversation around the mental health of young people, particularly young men, who are statistically less likely to openly discuss emotional or psychological distress. The male protagonist — portrayed by Shahan Akbar — is presented in an entirely domestic, intimate environment (Ziyad's home), which powerfully reinforces the idea that psychological struggles do not always originate from dramatic external events but from the ordinary, private spaces of one's everyday life. The seemingly trivial nature of the dripping tap is intentional: it represents an intrusive thought, a persistent anxiety, something that should be simple to resolve yet consumes the subconscious entirely.`,
-
-      `The production blog itself also represents a significant social group: young, aspiring creatives from South Asian backgrounds navigating the media industry with limited financial resources. Throughout the blog, Habibullah and Ziyad are explicit about their tight student budget, their reliance on borrowed equipment, and their dependency on a social network of friends rather than professional systems. This honest documentation challenges a media landscape that often presents filmmaking as an expensive, exclusive pursuit, instead asserting that meaningful creative work can emerge from resourcefulness, collaboration, and community — values deeply embedded in South Asian youth culture.`,
-
-      `By securing a corporate food sponsorship from Melado, organising a school-wide film screening, and navigating student council approval processes, the project also engages with ideas of youth agency within institutional structures. The blog represents young people as proactive, entrepreneurially minded individuals capable of producing work that demands a real audience and real stakeholder investment — a meaningful counter-narrative to how youth is often perceived within mainstream media discourse.`,
-    ],
-  },
-  {
-    number: "02",
-    title: "How do the elements of your production work together to create a sense of 'branding'?",
-    color: "text-dream-light",
-    borderColor: "border-dream/40",
-    badgeClass: "badge-dream",
-    body: [
-      `The branding of "Drowning in Silence" operates on multiple, interconnected levels — from the name and visual identity, to the blog's design language and the film's cinematic aesthetic — all of which cohere into a unified, recognisable identity. The title is the anchor of this brand. "Drowning in Silence" is evocative, metaphorically rich, and immediately communicates genre, tone, and emotional register: it is dark, introspective, and poetic. This single phrase generates a visual world — deep blues, blacks, and muted golds; quiet, heavy atmospheres; a sense of being submerged — which then informs every subsequent creative decision.`,
-
-      `The blog, as a production diary and media artefact in its own right, reinforces this brand identity through its design system. The dark colour palette — deep blacks and navy surfaces lit by warm gold and cool purple accents — mirrors precisely the mood established by the film's cinematic aesthetic: high-contrast, dramatic lighting using the RGB LED stick lights and ring light borrowed from Shahan Akbar. The gold accent used throughout the blog's typography, buttons, and interactive elements echoes the warmth and craftsmanship of analogue filmmaking, while the purple tones evoke the surreal, dreamlike psychological space the film inhabits. The design is not incidental; it is a deliberate extension of the film's brand into the digital production diary.`,
-
-      `The AI-generated film poster — created after multiple failed attempts at manual design — demonstrates a pragmatic yet creatively coherent approach to brand visualisation. The poster, featuring the lead actor Shahan Akbar prominently beneath the title "Drowning in Silence," applies conventions borrowed from professional film marketing: a central figure, stark contrast, and a title treatment that functions as both image and statement. Even within its AI-generated origins, the poster upholds the established visual grammar of the project's identity.`,
-
-      `The parallel existence of Habibullah's production blog and Ziyad Baig's partner blog creates a multi-perspective brand narrative — similar to how major productions release behind-the-scenes content from multiple cast and crew members to build audience investment. Both blogs, covering the same project from different vantage points, collectively expand the project's brand presence and create a sense of a larger creative world surrounding the film. Together, the film, poster, this blog, and the partner blog constitute a coherent, deliberately constructed brand ecosystem — one that punches significantly above its student-budget origins.`,
-    ],
-  },
-  {
-    number: "03",
-    title: "How do your products engage with the audience?",
-    color: "text-gold",
-    borderColor: "border-gold/40",
-    badgeClass: "badge-gold",
-    body: [
-      `Audience engagement was embedded into the "Drowning in Silence" project from multiple directions simultaneously — through the film's thematic universality, the blog's candid tone, and the strategic construction of a live premiere event. Each of these layers functions differently, targeting distinct modes of audience interaction and creating a cumulative sense of investment in the project and its creators.`,
-
-      `At the level of the film itself, the dream-within-a-dream narrative is a particularly powerful vehicle for audience engagement because it draws on an experience that is genuinely universal: everyone has encountered a dream so vivid and disorienting that waking within it felt indistinguishable from reality. By anchoring the film in this shared human experience and layering it with the familiar domestic anxiety of a dripping tap, the film creates an immediate sense of recognition and emotional resonance in its audience. The audience is not watching a distant or exotic scenario — they are watching something that could plausibly be their own subconscious experience, rendered visible.`,
-
-      `The production blog engages its audience through a strategy of radical transparency and authentic voice. Habibullah's writing is deliberately conversational, self-aware, and honest about failure and uncertainty — acknowledging, for instance, that Day 1 of the shoot went badly, that the poster design attempt was unsuccessful, and that sponsorship prospects felt unlikely. This candour is rhetorically effective because it invites the audience into a genuine relationship with the creators rather than presenting a polished, retrospective narrative of smooth success. Readers of the blog become participants in the journey rather than consumers of a finished product, which builds a far deeper and more durable form of engagement.`,
-
-      `The school film premiere event was the most direct and impactful form of audience engagement in the project. By partnering with the school's Film Media Club, securing SMD screen provision through a peer sponsor, and obtaining food sponsorship from Melado (50 ice creams for attendees), the event transformed the film's screening from a classroom submission into a genuine cultural occasion. The strong student turnout, the communal atmosphere, and the celebratory energy described in the final blog post all indicate that the event successfully positioned the film as something worth gathering around. The absence of lead actor Shahan Akbar from the premiere was the one note of genuine disappointment in an otherwise triumphant engagement exercise — a human detail that itself deepens the audience's emotional connection to the project's story.`,
-    ],
-  },
-  {
-    number: "04",
-    title: "How did your research inform your products and the way they use or challenge conventions?",
-    color: "text-dream-light",
-    borderColor: "border-dream/40",
-    badgeClass: "badge-dream",
-    body: [
-      `Research played a foundational and ongoing role in shaping the creative and technical decisions made throughout the "Drowning in Silence" project, informing both the adherence to established media conventions and the deliberate departure from them in several key areas. From the earliest ideation stage — where watching multiple A-Level graduates' film projects directly catalysed the choice of a psychological, non-linear narrative concept — to the final production choices around equipment, lighting, editing, and event management, the project demonstrates a pattern of research-informed practice.`,
-
-      `The decision to use a Sony a6400 as the primary camera reflects research into professional-grade mirrorless cinematography — a camera widely used in independent and commercial filmmaking contexts, chosen deliberately over the more obvious student convention of smartphone or consumer camera use. While an iPhone 13 was used supplementarily for specific cinematic angles, the a6400 established the film's production value as intentionally above the baseline expectation for student work. Similarly, the three-point lighting setup — using Ziyad's RGB LED stick lights as key lights and Shahan Akbar's ring light as a fill — demonstrates clear research into lighting conventions in narrative filmmaking, specifically the use of key-to-fill ratios to shape a subject and control mood.`,
-
-      `The choice to edit in Adobe Premiere Pro, an industry-standard professional editing application, reflects both research into and alignment with professional post-production conventions — actively resisting the student convention of using accessible but limited tools. This decision to operate within professional conventions rather than around them signals an aspiration toward industry-standard output and an understanding, gained through research, of what distinguishes professional film production from amateur.`,
-
-      `Where the project most interestingly challenges conventions is in its incorporation of AI tools. Using ChatGPT to generate a production budget sheet and an AI image generator to produce the film poster represent a genuinely contemporary departure from conventional student media production practice. These are not shortcuts born of laziness but pragmatic, research-aware decisions: Habibullah explicitly identified that conventional poster design attempts were failing to produce professional-quality results, and applied available technology to solve the problem effectively. This reflects an understanding that the conventions of any creative industry — including ideas about authorship, design, and production process — are not fixed, and that emerging technologies provide new ways to produce work that meets or exceeds established quality standards. In this respect, "Drowning in Silence" both honours the conventions of professional filmmaking and actively pioneers new practices in how student media production can be approached, documented, and delivered to a real audience.`,
-    ],
-  },
-];
-
-const wordCount = 1624;
+const essayContent = `I have been sitting here trying to figure out how to wrap up everything that went into this project and honestly I do not even know where to start because the film we made has been one of the most chaotic and exhausting and rewarding things I have ever put my name on and now that the premiere is done and the ice creams are finished and the lights are off I think it is finally time to actually sit down and talk about what we were really trying to make and why and when Ziyad and I landed on the name it was not some random creative decision because it came from a real place and we wanted to make something that spoke to an experience a lot of young people and especially guys my age never actually talk about out loud and that slow and quiet kind of suffering and the kind where nothing dramatic is even happening from the outside but internally you are completely overwhelmed and drowning felt right because it is extreme and it is life or death language but in silence is the part that hit different for me because that is exactly how it works and nobody sees it and nobody hears it and you are just struggling quietly while life carries on around you and that tension is what the whole film is built on because our protagonist is not going through some massive external crisis rather he is in a normal house in a normal room just trying to turn off a dripping tap and that is it and he cannot because he wakes up and tries again and realises he is still in the dream over and over and the dream inside a dream structure was not just a cool narrative trick because it was the most honest way we could represent what intrusive anxiety actually feels like and that thing where you think you have dealt with something and you think you have moved on and then you wake up and it is still there and still dripping and the tap was intentional too because it is so small and so trivial and that is exactly the point because anxiety does not need a dramatic reason to take over your whole subconscious and it just slowly builds quietly in the background until it is all you can think about and I also want to be real about why we made the lead character a young man because statistically young men are the least likely group to speak openly about psychological distress and we know this and yet so much media either ignores that reality entirely or only represents it after it is already too late and after something has gone wrong and after a crisis point and we wanted to show the quiet bit the bit before all of that the part that looks like nothing from the outside and my friend was the right person to carry that role because filming at the house a completely domestic and personal space reinforced exactly what we needed which is that psychological struggle does not live in hospitals or dramatic events but it lives in your bedroom and your bathroom and the ordinary and private corners of your life and the subtle repetition of normal actions turning into a nightmare is something everyone can secretly relate to even if they never admit it out loud and going into the production process I will not pretend the financial reality of this project was not a constant pressure because we were working on a student budget and by budget I mean almost none and the production budget sheet I generated made it very clear how thin the margins were and everything we used was borrowed because we brought ring lights and stick lights and we used those as our three point setup with key lights and fill and the whole thing and it actually worked beautifully with high contrast and dramatic mood matching exactly the kind of lighting the film needed to convey that dark and suffocating environment and our main camera was something I was genuinely grateful for because it gave the footage a quality that lifted the entire project above what most student films look like with its sharp focus and deep shadows and we also pulled out a mobile phone for some specific angles which sounds like a downgrade but honestly used right it was absolutely fine and the editing process went through professional software because we were not going to cut corners on post production by using something basic and if we were making something that aspired to be professional we had to work in professional tools and the color grading alone took hours to get the perfect cold and desaturated look to make the mood feel heavy and isolating but honestly the hardest part was not the equipment it was everything around the actual filmmaking because day one of the shoot did not go well and I will just say it plainly because I think it matters since there were coordination issues and timing issues and energy issues and it was the kind of day where you genuinely question whether the whole thing is going to come together and I debated whether to even mention it in the blog because part of me wanted to write a smooth and polished account of a project that just worked but that felt incredibly dishonest and more than anything this blog was supposed to be a real document and not a highlight reel so I kept it in and I am glad I did because that transparency is part of what made the blog mean something beyond just a production diary and if you are reading this as someone who wants to get into filmmaking or any kind of creative work really I want you to know that it is completely normal for things to fall apart on day one and it does not mean the project is over you just have to adapt and keep moving forward and try again the next day the poster took much longer than it should have and I tried multiple times with manual design attempts and online template layouts and different approaches and absolutely nothing looked like what was in my head and nothing looked professional enough it just looked like a student made it which is fine since I am a student but that was not the standard I wanted to hit so I used an image generator instead and before anyone has thoughts about that this was a deliberate and research aware decision and not laziness because I had identified the problem clearly which was that I could not produce the quality I needed through manual means with the tools and time I had and the generator gave me a solution that actually matched the visual identity of the film perfectly and the final poster features the main actor front and centre with the title treatment sitting above him high contrast and stark and it follows the conventions of proper film marketing with a central figure and a statement title and visual weight and it does what a poster is supposed to do and the fact that a computer generated it does not make it less valid because it makes it a real example of how emerging technology is changing what student productions can actually achieve in a very meaningful way something I am genuinely proud of that I think could easily be missed is that the entire project the film the poster this blog and the partner blog all function as one coherent brand and the visual design of the blog is not random because the deep blacks and navy surfaces and the gold accent on the typography and buttons and the cool purple running through it all of that was pulled directly from the emotional world of the film and the gold references the warmth of analogue filmmaking while the purple sits in the surreal and dreamlike psychological space the narrative lives in and none of it was incidental because every design choice in this blog was an extension of the films identity into a digital space and covering the same project from different perspectives with two separate blogs and two voices and two vantage points also created something bigger than either of us individually similar to how major film productions release behind the scenes content from multiple crew members to build audience investment and we were not a major production by any stretch but the principle was exactly the same because more perspectives means a richer and more immersive world around the work creating a complete experience for anyone following our journey the school screening was genuinely one of the best nights of the entire project and getting there involved vastly more logistical planning than I initially anticipated requiring student council approval and coordinating the film media club partnership and sorting the large display screen through a peer sponsor and chasing the food sponsorship which was fifty ice creams for attendees and honestly I was not confident we would actually pull that off as there were multiple critical points where I thought some key element of it was going to fall through completely but it did not and there was a very strong turnout and real electric energy in the room and seeing people watching something we made in a proper screening setting with actual atmosphere was incredible and that is not nothing that is a lot.`;
 
 export default function CriticalReflectionPage() {
   return (
     <>
       <Navbar />
       <main className="min-h-screen pt-24 pb-32">
-
-        {/* ── Hero ─────────────────────────────────── */}
         <section className="relative py-20 px-6 text-center overflow-hidden">
           <motion.div
             className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-72 rounded-full bg-gold/5 blur-3xl"
@@ -112,10 +45,9 @@ export default function CriticalReflectionPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-text-muted text-sm max-w-xl mx-auto leading-relaxed"
             >
-              A 1600-word analytical essay examining the &quot;Drowning in Silence&quot; A2 Media Studies short film project — exploring representation, branding, audience engagement, and research-informed practice.
+              A deeper look back at the chaotic exhausting and rewarding experience of creating Drowning in Silence
             </motion.p>
 
-            {/* Word count badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,9 +56,6 @@ export default function CriticalReflectionPage() {
             >
               <span className="badge-muted text-xs font-mono">
                 ~{wordCount.toLocaleString()} words
-              </span>
-              <span className="badge-muted text-xs font-mono">
-                4 questions
               </span>
               <span className="badge-gold text-xs font-mono">
                 Habibullah Wahaaj
@@ -138,101 +67,29 @@ export default function CriticalReflectionPage() {
         <div className="max-w-3xl mx-auto px-6">
           <FadeIn><div className="gold-line mb-16" /></FadeIn>
 
-          {/* ── Table of Contents ────────────────── */}
-          <AnimatedSection delay={0.1} direction="up">
-            <div className="glass-card p-6 mb-16">
-              <div className="text-xs font-mono text-text-muted tracking-widest uppercase mb-4">
-                Contents
-              </div>
-              <ol className="space-y-2">
-                {questions.map((q) => (
-                  <li key={q.number}>
-                    <a
-                      href={`#q${q.number}`}
-                      className="flex items-start gap-3 group text-sm text-text-muted hover:text-gold transition-colors duration-200"
-                    >
-                      <span className={`font-mono text-xs mt-0.5 flex-shrink-0 ${q.color}`}>
-                        {q.number}
-                      </span>
-                      <span className="group-hover:underline underline-offset-3 leading-snug">
-                        {q.title}
-                      </span>
-                      <ChevronRight size={12} className="flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
+          <AnimatedSection delay={0.15} direction="up">
+            <article className="prose-custom max-w-none">
+              <motion.div
+                className="pl-6 border-l-2 border-gold/40 space-y-6"
+                initial={{ opacity: 0, x: 12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-text-secondary text-base leading-[1.9] text-balance">
+                  {essayContent}
+                </p>
+              </motion.div>
+            </article>
           </AnimatedSection>
 
-          {/* ── Questions + Essay Body ───────────── */}
-          <StaggerContainer className="space-y-24" staggerDelay={0.15}>
-            {questions.map((q, qi) => (
-              <StaggerChild key={q.number}>
-                <article id={`q${q.number}`} className="scroll-mt-28">
-                  {/* Question header */}
-                  <div className="flex items-start gap-4 mb-8">
-                    <motion.div
-                      className={`flex-shrink-0 font-display text-5xl font-black italic ${q.color} opacity-20 select-none leading-none`}
-                      whileInView={{ opacity: [0, 0.2] }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      {q.number}
-                    </motion.div>
-                    <div>
-                      <span className={`${q.badgeClass} text-[10px] mb-3 inline-block`}>
-                        Question {q.number}
-                      </span>
-                      <h2 className={`font-display text-xl md:text-2xl font-bold leading-snug ${q.color}`}>
-                        {q.title}
-                      </h2>
-                    </div>
-                  </div>
-
-                  {/* Animated left border */}
-                  <motion.div
-                    className={`pl-6 border-l-2 ${q.borderColor} space-y-5`}
-                    initial={{ borderLeftColor: "rgba(255,255,255,0.05)" }}
-                    whileInView={{ borderLeftColor: qi % 2 === 0 ? "rgba(212,168,67,0.4)" : "rgba(124,111,240,0.4)" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                  >
-                    {q.body.map((para, pi) => (
-                      <motion.p
-                        key={pi}
-                        className="text-text-secondary text-base leading-[1.9] text-balance"
-                        initial={{ opacity: 0, x: 12 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-40px" }}
-                        transition={{ duration: 0.5, delay: pi * 0.1 }}
-                      >
-                        {para}
-                      </motion.p>
-                    ))}
-                  </motion.div>
-                </article>
-
-                {/* Section divider */}
-                {qi < questions.length - 1 && (
-                  <FadeIn>
-                    <div className="gold-line mt-16" />
-                  </FadeIn>
-                )}
-              </StaggerChild>
-            ))}
-          </StaggerContainer>
-
-          {/* ── Footer note ────────────────────── */}
           <AnimatedSection delay={0.1} direction="up">
             <div className="mt-20 glass-card p-8 text-center space-y-3 border-t-2 border-gold/20">
               <div className="text-xs font-mono text-text-muted tracking-widest uppercase">
                 End of Critical Reflection
               </div>
               <p className="text-sm text-text-muted">
-                Written by{" "}
-                <span className="text-gold font-semibold">Habibullah Wahaaj</span>
-                {" "}· A2 Media Studies · &quot;Drowning in Silence&quot;
+                Written by <span className="text-gold font-semibold">Habibullah Wahaaj</span> A2 Media Studies Drowning in Silence
               </p>
               <div className="flex items-center justify-center gap-3 flex-wrap pt-1">
                 <span className="badge-muted text-xs">~{wordCount.toLocaleString()} words</span>
