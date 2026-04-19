@@ -103,22 +103,9 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="gold-line mt-12 mb-6" />
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-muted font-mono">
-            © {year} Habibullah Wahaaj. A2 Media Studies Project.
-          </p>
+        <div className="flex items-center justify-center">
           <p className="text-xs text-text-muted font-mono text-center">
-            Designed by{" "}
-            <a
-              href="https://devaiconsultants.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold hover:text-gold-light transition-colors duration-200 hover:underline"
-            >
-              devaiconsultants.com
-            </a>
-            {" "}·{" "}Built with{" "}
-            <span className="text-dream-light">Next.js</span>
+            © {year} Habibullah Wahaaj. A2 Media Studies Project.
           </p>
         </div>
       </div>
