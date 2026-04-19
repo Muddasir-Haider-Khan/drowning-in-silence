@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, ArrowRight, Tag } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, ArrowRight, Tag, Images } from "lucide-react";
 import type { Post } from "@/data/posts";
 import { posts } from "@/data/posts";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 interface Props {
   post: Post;
@@ -15,8 +16,42 @@ interface Props {
 }
 
 export default function PostAnimations({ post, prev, next, badgeClass, contentHtml }: Props) {
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+
   return (
     <>
+      {/* Lightbox */}
+      {lightboxSrc && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onClick={() => setLightboxSrc(null)}
+        >
+          <motion.div
+            className="relative max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-2xl"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={lightboxSrc}
+              alt="Full size preview"
+              width={1200}
+              height={800}
+              className="w-full h-auto max-h-[90vh] object-contain"
+            />
+            <button
+              onClick={() => setLightboxSrc(null)}
+              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-colors text-lg font-bold"
+            >
+              ×
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+
       {/* Back button */}
       <div className="max-w-3xl mx-auto px-6 pt-8 pb-4">
         <motion.div
@@ -41,27 +76,25 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
       </div>
 
       <div className="max-w-3xl mx-auto px-6">
-        {/* Hero image placeholder */}
+        {/* Hero image — real asset */}
         <motion.div
-          className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-surface via-elevated to-void border border-border mb-8"
+          className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border mb-8"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div className="font-display text-8xl font-black text-gold/10 italic select-none">
-                {String(post.id).padStart(2, "0")}
-              </div>
-            </motion.div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-dream/5" />
+
           <div className="absolute top-4 left-4">
             <motion.span
               className={badgeClass}
@@ -72,7 +105,7 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
               {post.category}
             </motion.span>
           </div>
-          <div className="absolute bottom-4 right-4 font-mono text-xs text-text-muted">
+          <div className="absolute bottom-4 right-4 font-mono text-xs text-white/60">
             Post {post.id} of {posts.length}
           </div>
         </motion.div>
@@ -122,6 +155,45 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
           {contentHtml}
         </motion.article>
 
+        {/* Gallery — only shown when post has multiple images */}
+        {post.gallery && post.gallery.length > 1 && (
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Images size={14} className="text-gold" />
+              <span className="text-xs font-mono text-text-muted tracking-widest uppercase">
+                Gallery · {post.gallery.length} photos
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {post.gallery.map((src, i) => (
+                <motion.button
+                  key={src}
+                  className="relative aspect-video rounded-xl overflow-hidden border border-border group cursor-zoom-in"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.35, delay: 0.5 + i * 0.06 }}
+                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                  onClick={() => setLightboxSrc(src)}
+                >
+                  <Image
+                    src={src}
+                    alt={`${post.title} photo ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         {/* Tags */}
         <motion.div
           className="flex items-center gap-2 flex-wrap mt-10 pt-8 border-t border-border/40"
@@ -152,8 +224,14 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
           transition={{ duration: 0.5, delay: 0.6 }}
           whileHover={{ borderColor: "rgba(212,168,67,0.3)" }}
         >
-          <div className="w-12 h-12 rounded-xl bg-elevated border border-border flex items-center justify-center flex-shrink-0">
-            <span className="font-display text-xl font-bold text-gold/60">H</span>
+          <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-border flex-shrink-0">
+            <Image
+              src="/images/habibullah.jpg"
+              alt="Habibullah Wahaaj"
+              fill
+              className="object-cover object-top"
+              sizes="48px"
+            />
           </div>
           <div>
             <div className="text-xs font-mono text-text-muted mb-1 tracking-widest uppercase">Written by</div>
@@ -171,25 +249,38 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
         >
           {prev ? (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link href={`/blog/${prev.slug}`} className="group glass-card p-5 flex flex-col gap-2 block">
-                <span className="text-xs font-mono text-text-muted flex items-center gap-1">
-                  <ArrowLeft size={11} /> Previous
-                </span>
-                <span className="font-display text-base font-semibold text-text-secondary group-hover:text-gold transition-colors duration-200">
-                  {prev.title}
-                </span>
+              <Link href={`/blog/${prev.slug}`} className="group glass-card overflow-hidden flex flex-col block">
+                {/* Prev thumbnail strip */}
+                <div className="relative h-20 overflow-hidden">
+                  <Image src={prev.image} alt={prev.title} fill className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" sizes="400px" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                </div>
+                <div className="p-4">
+                  <span className="text-xs font-mono text-text-muted flex items-center gap-1">
+                    <ArrowLeft size={11} /> Previous
+                  </span>
+                  <span className="font-display text-sm font-semibold text-text-secondary group-hover:text-gold transition-colors duration-200 block mt-1">
+                    {prev.title}
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ) : <div />}
           {next ? (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link href={`/blog/${next.slug}`} className="group glass-card p-5 flex flex-col gap-2 text-right block">
-                <span className="text-xs font-mono text-text-muted flex items-center gap-1 justify-end">
-                  Next <ArrowRight size={11} />
-                </span>
-                <span className="font-display text-base font-semibold text-text-secondary group-hover:text-gold transition-colors duration-200">
-                  {next.title}
-                </span>
+              <Link href={`/blog/${next.slug}`} className="group glass-card overflow-hidden flex flex-col text-right block">
+                <div className="relative h-20 overflow-hidden">
+                  <Image src={next.image} alt={next.title} fill className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" sizes="400px" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
+                </div>
+                <div className="p-4">
+                  <span className="text-xs font-mono text-text-muted flex items-center gap-1 justify-end">
+                    Next <ArrowRight size={11} />
+                  </span>
+                  <span className="font-display text-sm font-semibold text-text-secondary group-hover:text-gold transition-colors duration-200 block mt-1">
+                    {next.title}
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ) : <div />}

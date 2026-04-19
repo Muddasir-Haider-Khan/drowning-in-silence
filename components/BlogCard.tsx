@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight, Calendar } from "lucide-react";
 import type { Post } from "@/data/posts";
@@ -28,28 +29,26 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
           whileTap={{ scale: 0.98 }}
         >
-          {/* Placeholder image */}
-          <div className="relative h-52 bg-gradient-to-br from-surface to-elevated overflow-hidden flex-shrink-0">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="font-display text-5xl text-gold/15 font-black italic select-none">
-                  {String(post.id).padStart(2, "0")}
-                </div>
-                <div className="text-xs font-mono text-text-muted/60 tracking-widest uppercase mt-1">
-                  {post.category}
-                </div>
-              </div>
-            </div>
+          {/* Real post image */}
+          <div className="relative h-52 overflow-hidden flex-shrink-0">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-            {/* Animated shimmer overlay on hover */}
+            {/* Shimmer on hover */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/10 to-transparent"
               initial={{ x: "-100%" }}
               whileHover={{ x: "100%" }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute top-4 left-4">
               <motion.span
                 className={badgeClass}
@@ -59,14 +58,6 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 {post.category}
               </motion.span>
             </div>
-
-            {/* Hover glow */}
-            <motion.div
-              className="absolute inset-0 bg-gold/5 pointer-events-none"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-            />
           </div>
 
           <div className="p-5 space-y-3 flex-1 flex flex-col">
@@ -86,7 +77,6 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               {post.excerpt}
             </p>
 
-            {/* Animated read more */}
             <motion.div
               className="flex items-center gap-2 text-gold text-sm font-medium pt-1"
               initial={{ opacity: 0, x: -8 }}
@@ -110,7 +100,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
       <motion.article
-        className="glass-card p-5 flex gap-4 items-start"
+        className="glass-card p-0 flex gap-0 items-start overflow-hidden"
         whileHover={{
           y: -2,
           borderColor: "rgba(212,168,67,0.3)",
@@ -118,17 +108,19 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         }}
         whileTap={{ scale: 0.99 }}
       >
-        {/* Number */}
-        <motion.div
-          className="flex-shrink-0 w-12 h-12 rounded-xl bg-elevated border border-border flex items-center justify-center"
-          whileHover={{ borderColor: "rgba(212,168,67,0.4)" }}
-        >
-          <span className="font-display text-base font-bold text-gold/50 group-hover:text-gold transition-colors duration-300">
-            {String(post.id).padStart(2, "0")}
-          </span>
-        </motion.div>
+        {/* Thumbnail */}
+        <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            sizes="80px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
+        </div>
 
-        <div className="flex-1 min-w-0 space-y-1.5">
+        <div className="flex-1 min-w-0 p-4 space-y-1.5">
           <div className="flex items-center gap-2 flex-wrap">
             <span className={`${badgeClass} text-[10px]`}>{post.category}</span>
             <span className="text-[10px] text-text-muted font-mono flex items-center gap-1">
@@ -144,7 +136,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         </div>
 
         <motion.div
-          className="flex-shrink-0 text-text-muted group-hover:text-gold mt-1"
+          className="flex-shrink-0 text-text-muted group-hover:text-gold p-4 self-center"
           whileHover={{ x: 4 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
         >

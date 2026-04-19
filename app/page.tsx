@@ -25,6 +25,18 @@ export default function HomePage() {
 
         {/* ── Hero Section ─────────────────────────── */}
         <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+          {/* Dark sea hero background */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/hero-bg.jpg"
+              alt=""
+              fill
+              className="object-cover opacity-20"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void" />
+          </div>
           {/* Background orbs */}
           <div className="pointer-events-none absolute inset-0">
             <motion.div
@@ -192,7 +204,7 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-8 rounded-full border border-border overflow-hidden shadow-gold">
                       <Image
-                        src="/habibullah.jpg"
+                        src="/images/habibullah.jpg"
                         alt="Habibullah Wahaaj"
                         fill
                         className="object-cover object-top"
