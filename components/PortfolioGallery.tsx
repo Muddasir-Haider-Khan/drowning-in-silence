@@ -56,6 +56,8 @@ const MediaItem = ({ item, onClick }: { item: FileItem, onClick: () => void }) =
           className="object-cover transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 256px, 320px"
           unoptimized
+          loading="lazy"
+          quality={60}
         />
       ) : (
         <video
@@ -110,14 +112,14 @@ export default function PortfolioGallery() {
         <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-void via-transparent to-void w-full" />
         
         {/* Row 1 - scrolling left */}
-        <div className="flex w-fit animate-scroll-left gap-6 hover:[animation-play-state:paused] px-6">
+        <div className="flex w-fit animate-scroll-left gap-6 hover:[animation-play-state:paused] px-6 will-change-transform">
           {[...row1, ...row1].map((item, i) => (
             <MediaItem key={`r1-${i}`} item={item} onClick={() => openLightbox(item)} />
           ))}
         </div>
 
         {/* Row 2 - scrolling right */}
-        <div className="flex w-fit animate-scroll-right gap-6 hover:[animation-play-state:paused] px-6 -translate-x-1/2">
+        <div className="flex w-fit animate-scroll-right gap-6 hover:[animation-play-state:paused] px-6 -translate-x-1/2 will-change-transform">
           {[...row2, ...row2].map((item, i) => (
             <MediaItem key={`r2-${i}`} item={item} onClick={() => openLightbox(item)} />
           ))}

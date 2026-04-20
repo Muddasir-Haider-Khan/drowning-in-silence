@@ -205,7 +205,7 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-8 rounded-full border border-border overflow-hidden shadow-gold">
                       <Image
-                        src="/images/habibullah.jpg"
+                        src="/images/about-me-main.jpg"
                         alt="Habibullah Wahaaj"
                         fill
                         className="object-cover object-top"

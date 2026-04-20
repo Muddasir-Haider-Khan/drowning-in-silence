@@ -24,7 +24,7 @@ export const posts: Post[] = [
       "Now here we are, sitting in our class with our teacher thinking about an Idea for our short film because apparently we were the only group who didn't have an idea yet.",
     content: `Now here we are, sitting in our class with our teacher thinking about an Idea for our short film because apparently we were the only group who didn't have an idea yet. Now after watching multiple projects of A levels Graduates we come to a conclusion that we will go for an idea where there will be a guy who will be somewhat in a dream within a dream and will keep trying to turn of the tap for water but he wakes up again and again just to see that the water is still dripping and in the end he just wakes to see that that everything is ok and it was just a dream.`,
     tags: ["Pre-Production", "Concept", "Idea"],
-    image: "/images/dark-sea.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const posts: Post[] = [
       "After weeks of hunting for a person to cast in our film, we finally found a person named Shahan Akbar.",
     content: `After weeks of hunting for a person to cast in our film, we finally found a person named Shahan Akbar. He's a close friend of Ziyad's and on top of that he was also really good at acting, so he was a perfect match for our film and we are definitely looking forward to work with him in the future.`,
     tags: ["Pre-Production", "Casting", "Actor"],
-    image: "/images/shahan-portrait.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 3,
@@ -50,8 +50,8 @@ export const posts: Post[] = [
       "We used a wide variety of equipment for our film — from a Sony a6400 to an iPhone 13.",
     content: `We used a wide variety of equipment for our film:\n\n- Standard tripod\n- iPhone 13 (for a few cinematic shots)\n- Two RGB LED Stick lights\n- Two High Wattage LED bulbs\n- Sony a6400 (which was the main camera for our film)`,
     tags: ["Pre-Production", "Equipment", "Camera"],
-    image: "/images/gimbal.jpg",
-    gallery: ["/images/gimbal.jpg", "/images/tripod.jpg"],
+    image: "/images/equipment-new.jpeg",
+    gallery: ["/images/equipment-new.jpeg", "/images/gimbal-new.jpeg"],
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const posts: Post[] = [
       "So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget.",
     content: `So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget and wanted to finish the project as soon as possible and for as cheap as possible. So I used Chat GPT to create a budget sheet for us.`,
     tags: ["Pre-Production", "Budget", "Planning"],
-    image: "/images/budget-sheet.png",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ export const posts: Post[] = [
       "In the start we were really worried about the lighting of our project and specifically the fill light.",
     content: `In the start we were really worried about the lighting of our project and specifically the fill light but thankfully our friend Shahan اکبر (the main actor in our film) had a ring light at his home so he let us use that as a fill light for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
-    image: "/images/ring-light.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 6,
@@ -90,7 +90,7 @@ export const posts: Post[] = [
       "Ziyad had a pair of RGB stick lights which he got from China a year ago.",
     content: `Ziyad had a pair of RGB stick lights which he got from China a year ago, they were pretty high quality lights and we decided to use those as our main key lights for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
-    image: "/images/key-light.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 7,
@@ -103,7 +103,7 @@ export const posts: Post[] = [
       "We Decided to shoot our film in Ziyad's house as it was accessible to everyone.",
     content: `We Decided to shoot our film in Ziyad's house as it was accessible to everyone and on top of that his parents were away on an international trip so he was home alone, meaning we could shoot our project while having fun.`,
     tags: ["Production", "Location", "Shoot"],
-    image: "/images/ziyad-house.jpg",
+    image: "/images/shoot-location-new.jpeg",
   },
   {
     id: 8,
@@ -116,14 +116,8 @@ export const posts: Post[] = [
       "Today was the first day of our shoot and honestly things were harder than I thought they would be.",
     content: `Today was the first day of our shoot and honestly things were harder than I thought they would be but we still managed to get some of the shots that we needed but we still had much work left for the next day.`,
     tags: ["Production", "Shoot", "Behind the Scenes"],
-    image: "/images/bts-1.jpg",
-    gallery: [
-      "/images/bts-1.jpg",
-      "/images/shoot-dsc-1.jpg",
-      "/images/shoot-dsc-2.jpg",
-      "/images/shoot-dsc-3.jpg",
-      "/images/shoot-dsc-4.jpg",
-    ],
+    image: "/images/shoot-day-1-new.jpeg",
+    gallery: [],
   },
   {
     id: 9,
@@ -136,17 +130,8 @@ export const posts: Post[] = [
       "Finally! Today was the second day of our shoot and I can confidently say that we have captured all the necessary shots.",
     content: `Finally! Today was the second day of our shoot and I can confidently say that we have captured all the necessary shots we need for our project and honestly, I think our project will turn out to be decent.`,
     tags: ["Production", "Shoot", "Behind the Scenes"],
-    image: "/images/bts-2.jpg",
-    gallery: [
-      "/images/bts-2.jpg",
-      "/images/bts-3.jpg",
-      "/images/shoot-dsc-5.jpg",
-      "/images/shoot-dsc-6.jpg",
-      "/images/shoot-dsc-7.jpg",
-      "/images/shoot-img-1.jpg",
-      "/images/shoot-img-2.jpg",
-      "/images/shoot-img-3.jpg",
-    ],
+    image: "/images/shoot-day-2-new.jpeg",
+    gallery: [],
   },
   {
     id: 10,
@@ -159,7 +144,7 @@ export const posts: Post[] = [
       "After the shoot, me and Ziyad sat down to edit our film and we were using Adobe Premiere Pro.",
     content: `After the shoot, me and Ziyad sat down to edit out film and we were using Adobe Premiere Pro for our project and honestly we really had fun doing this although a major part of the work was done by Ziyad because he is pro at this.`,
     tags: ["Post-Production", "Editing", "Adobe Premiere Pro"],
-    image: "/images/editing-ss.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 11,
@@ -172,7 +157,7 @@ export const posts: Post[] = [
       "So we got to know that our school's film media club event is happening soon.",
     content: `So we got to know that our school's film media club event is happening soon so me and Ziyad decided that we will be screening our project in that event alongside other fellow media students. But we still had to take permission from the student council.`,
     tags: ["Distribution", "Event", "Screening"],
-    image: "/images/premiere-1.png",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 12,
@@ -185,7 +170,7 @@ export const posts: Post[] = [
       "Surprisingly today we got the news that the film screening has been approved by the admin.",
     content: `Surprisingly today we got the news that the film screening has been approved by the admin and all we have to do now is find a sponsor for the SMD screens and a food sponsor if possible. This is great news!`,
     tags: ["Distribution", "Approval", "Event"],
-    image: "/images/premiere-habib-ziyad-edited.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 13,
@@ -198,8 +183,8 @@ export const posts: Post[] = [
       "After many tries of trying to design a perfect poster for our film ourselves, we were still unable to design a poster that looked professional.",
     content: `After many tries of trying to design a perfect poster for our film ourselves, we were still unable to design a poster that looked professional so we had no choice but to use AI to generate the poster of our film.`,
     tags: ["Distribution", "Poster", "Design"],
-    image: "/images/film-poster.jpg",
-    gallery: ["/images/film-poster.jpg", "/images/ai-poster-edited.jpg"],
+    image: "/images/placeholder.jpg",
+    gallery: [],
   },
   {
     id: 14,
@@ -212,7 +197,7 @@ export const posts: Post[] = [
       "The sponsor for the SMD screens was handled by another student in our class thankfully so the event was 100% confirmed.",
     content: `The sponsor for the SMD screens was handled by another student in our class thankfully so the event was 100% confirmed but we still needed a food sponsor. I reached out multiple companies for a sponsor and honestly not with much hope because sponsoring this event from marketing point of view wasn't actually very beneficial. But luckily I landed a sponsor of ice creams by a company named 'Melado'. They gave us 50 Ice creams in return for some pretty easy deliverables.`,
     tags: ["Distribution", "Sponsorship", "Event"],
-    image: "/images/premiere-habib-ziyad.jpg",
+    image: "/images/placeholder.jpg",
   },
   {
     id: 15,
@@ -225,18 +210,8 @@ export const posts: Post[] = [
       "Today was the long awaited film premiere event and our film was not bad at all if we compare it to the others.",
     content: `Today was the long awaited film premiere event and our film was not bad at all if we compare it to the others, but still we were really impressed by some of the work that our fellow students had done. It was a really fun day I think everyone in our class would agree! the free ice creams, the random fun we had together, the amount of students that gathered to see our work. I can confidently say that the film media club powered event in our school was a huge success! However, Sadly our Actor was unable to attend the event.`,
     tags: ["Premiere", "Event", "Screening"],
-    image: "/images/premiere-habib-ziyad-edited.jpg",
-    gallery: [
-      "/images/premiere-1.png",
-      "/images/premiere-habib-ziyad.jpg",
-      "/images/premiere-habib-ziyad-edited.jpg",
-      "/images/event-1.jpg",
-      "/images/event-2.jpg",
-      "/images/event-3.jpg",
-      "/images/event-4.jpg",
-      "/images/event-5.jpg",
-      "/images/event-6.jpg",
-    ],
+    image: "/images/placeholder.jpg",
+    gallery: [],
   },
 ];
 

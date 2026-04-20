@@ -68,7 +68,7 @@ export default function AboutPage() {
                   style={{ boxShadow: "0 0 40px rgba(203,162,69,0.15)" }}
                 >
                   <Image
-                    src="/images/habibullah.jpg"
+                    src="/images/about-me-main.jpg"
                     alt="Habibullah Wahaaj"
                     fill
                     className="object-cover object-top"
