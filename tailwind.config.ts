@@ -63,6 +63,8 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         pulse: "pulse 4s ease-in-out infinite",
         "scan-line": "scanLine 8s linear infinite",
+        "scroll-left": "scrollLeft 40s linear infinite",
+        "scroll-right": "scrollRight 40s linear infinite",
       },
       keyframes: {
         fadeUp: {
@@ -84,6 +86,14 @@ const config: Config = {
         scanLine: {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(100vh)" },
+        },
+        scrollLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-50% - 0.75rem))" },
+        },
+        scrollRight: {
+          "0%": { transform: "translateX(calc(-50% - 0.75rem))" },
+          "100%": { transform: "translateX(0)" },
         },
       },
       borderRadius: {

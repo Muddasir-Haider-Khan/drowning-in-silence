@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
 import AnimatedSection, { StaggerContainer, StaggerChild, FadeIn } from "@/components/AnimatedSection";
+import PortfolioGallery from "@/components/PortfolioGallery";
 
 const stats = [
   { label: "Blog Posts", value: "15", icon: Clapperboard },
@@ -289,6 +290,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <PortfolioGallery />
 
         {/* ── Recent Posts ─────────────────────────── */}
         <section className="relative py-24 px-6">
