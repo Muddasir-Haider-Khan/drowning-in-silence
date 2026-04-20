@@ -121,10 +121,10 @@ export default function BlogPage() {
             )}
           </motion.p>
 
-          {/* Posts Grid with AnimatePresence for smooth filter transitions */}
+          {/* Masonry Layout with CSS Columns */}
           {filtered.length > 0 ? (
             <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5"
               layout
             >
               <AnimatePresence mode="popLayout">
@@ -132,14 +132,14 @@ export default function BlogPage() {
                   <motion.div
                     key={post.id}
                     layout
-                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                     transition={{
-                      duration: 0.35,
-                      delay: i * 0.04,
-                      ease: [0.25, 0.46, 0.45, 0.94],
+                      duration: 0.4,
+                      delay: i * 0.02,
                     }}
+                    className="break-inside-avoid-column mb-5"
                   >
                     <BlogCard post={post} featured />
                   </motion.div>

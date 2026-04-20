@@ -20,6 +20,25 @@ interface BlogCardProps {
 
 export default function BlogCard({ post, featured = false }: BlogCardProps) {
   const badgeClass = categoryColors[post.category] || "badge-muted";
+  const isPlaceholder = post.image.includes("placeholder.jpg") || !post.image;
+
+  const TypographyPlaceholder = ({ title, category, className }: { title: string, category: string, className?: string }) => (
+    <div className={`relative w-full aspect-[4/3] min-h-[240px] bg-void flex items-center justify-center p-8 overflow-hidden ${className}`}>
+      {/* Background patterns */}
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: `radial-gradient(circle at 20% 30%, var(--color-gold) 0%, transparent 50%), 
+                         radial-gradient(circle at 80% 70%, var(--color-dream) 0%, transparent 50%)`
+      }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/carbon-fibre.png")' }} />
+      
+      {/* Text content */}
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="font-display text-xl font-bold text-text-primary leading-tight max-w-[80%] line-clamp-3 italic opacity-80">
+          {title}
+        </div>
+      </div>
+    </div>
+  );
 
   if (featured) {
     return (
@@ -29,17 +48,23 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           whileHover={{ y: -4, transition: { duration: 0.25, ease: "easeOut" } }}
           whileTap={{ scale: 0.98 }}
         >
-          {/* Real post image */}
-          <div className="relative h-52 overflow-hidden flex-shrink-0">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          {/* Real post image or Typographic Placeholder */}
+          <div className="relative w-full overflow-hidden flex-shrink-0 bg-void">
+            {!isPlaceholder ? (
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={800}
+                height={600}
+                className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ display: 'block' }}
+              />
+            ) : (
+              <TypographyPlaceholder title={post.title} category={post.category} />
+            )}
             {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
             {/* Shimmer on hover */}
             <motion.div
@@ -108,15 +133,23 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
         }}
         whileTap={{ scale: 0.99 }}
       >
-        {/* Thumbnail */}
-        <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
-            sizes="80px"
-          />
+        {/* Thumbnail or Mini Typographic Placeholder */}
+        <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden bg-void border-r border-border/50">
+          {!isPlaceholder ? (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="80px"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-void to-elevated">
+              <span className="text-[10px] font-display font-bold text-gold/40 italic">
+                {post.title.substring(0, 2).toUpperCase()}
+              </span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
         </div>
 

@@ -105,7 +105,7 @@ export default function AboutPage() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+                  href="https://ziyadbaiga2.weebly.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 text-xs text-text-muted hover:text-gold transition-colors duration-200 group"
@@ -196,7 +196,7 @@ export default function AboutPage() {
                 role: "Partner",
                 name: "Ziyad Baig",
                 bio: "My project partner and co-director. Ziyad handled most of the technical editing in Adobe Premiere Pro and provided the key RGB lights for the shoot. He also owns a Sony a6400 which was used as our main camera.",
-                cta: { href: "https://ziyaddbaig.wixsite.com/ziyada2blog", label: "Visit Ziyad's Blog ↗", external: true },
+                cta: { href: "https://ziyadbaiga2.weebly.com/", label: "Visit Ziyad's Blog ↗", external: true },
               },
               {
                 initial: "S",

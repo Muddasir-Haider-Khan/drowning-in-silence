@@ -131,7 +131,7 @@ export default function HomePage() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <a
-                  href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+                  href="https://ziyadbaiga2.weebly.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"
@@ -312,13 +312,13 @@ export default function HomePage() {
               </div>
             </AnimatedSection>
 
-            <StaggerContainer className="grid md:grid-cols-2 gap-6" staggerDelay={0.12}>
+            <div className="columns-1 md:columns-2 gap-6 space-y-6">
               {recentPosts.map((post) => (
-                <StaggerChild key={post.id}>
+                <div key={post.id} className="break-inside-avoid-column mb-6">
                   <BlogCard post={post} featured />
-                </StaggerChild>
+                </div>
               ))}
-            </StaggerContainer>
+            </div>
 
             <motion.div
               className="flex justify-center mt-8 md:hidden"
@@ -355,7 +355,7 @@ export default function HomePage() {
                     My partner on this A2 Media project also documented his perspective on the entire production journey.
                   </p>
                   <motion.a
-                    href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+                    href="https://ziyadbaiga2.weebly.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline inline-flex mt-4"

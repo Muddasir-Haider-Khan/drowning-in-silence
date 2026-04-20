@@ -42,7 +42,7 @@ export default function Footer() {
                 { href: "/blog", label: "Blog" },
                 { href: "/about", label: "About Me" },
                 { href: "/critical-reflection", label: "Critical Reflection" },
-                { href: "https://ziyaddbaig.wixsite.com/ziyada2blog", label: "Partner Blog ↗", external: true },
+                { href: "https://ziyadbaiga2.weebly.com/", label: "Partner Blog ↗", external: true },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -86,7 +86,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+                  href="https://ziyadbaiga2.weebly.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-text-muted hover:text-gold transition-colors duration-200 group"

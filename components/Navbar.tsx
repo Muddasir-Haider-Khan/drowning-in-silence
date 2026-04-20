@@ -70,7 +70,7 @@ export default function Navbar() {
           })}
           <div className="w-px h-4 bg-border mx-2" />
           <a
-            href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+            href="https://ziyadbaiga2.weebly.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline text-xs py-2 px-4"
@@ -113,7 +113,7 @@ export default function Navbar() {
             );
           })}
           <a
-            href="https://ziyaddbaig.wixsite.com/ziyada2blog"
+            href="https://ziyadbaiga2.weebly.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="block px-4 py-3 rounded-xl text-sm font-medium text-gold/80 hover:text-gold hover:bg-gold/5 transition-all duration-200"

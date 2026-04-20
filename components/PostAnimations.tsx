@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, ArrowRight, Tag, Images } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, ArrowRight, Tag, Images, Play } from "lucide-react";
 import type { Post } from "@/data/posts";
 import { posts } from "@/data/posts";
 import { ReactNode, useState } from "react";
@@ -14,6 +14,8 @@ interface Props {
   badgeClass: string;
   contentHtml: ReactNode;
 }
+
+const isVideo = (src: string) => src.toLowerCase().endsWith(".mp4");
 
 export default function PostAnimations({ post, prev, next, badgeClass, contentHtml }: Props) {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
@@ -29,22 +31,31 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
           onClick={() => setLightboxSrc(null)}
         >
           <motion.div
-            className="relative max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-2xl"
+            className="relative max-w-5xl w-full max-h-[90vh] overflow-hidden rounded-2xl flex items-center justify-center bg-black"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={lightboxSrc}
-              alt="Full size preview"
-              width={1200}
-              height={800}
-              className="w-full h-auto max-h-[90vh] object-contain"
-            />
+            {isVideo(lightboxSrc) ? (
+              <video
+                src={lightboxSrc}
+                className="w-full h-auto max-h-[90vh] object-contain"
+                controls
+                autoPlay
+              />
+            ) : (
+              <Image
+                src={lightboxSrc}
+                alt="Full size preview"
+                width={1200}
+                height={800}
+                className="w-full h-auto max-h-[90vh] object-contain"
+              />
+            )}
             <button
               onClick={() => setLightboxSrc(null)}
-              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-colors text-lg font-bold"
+              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-colors text-lg font-bold z-10"
             >
               ×
             </button>
@@ -76,21 +87,45 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
       </div>
 
       <div className="max-w-3xl mx-auto px-6">
-        {/* Hero image — real asset */}
+        {/* Hero image or Typographic Hero */}
         <motion.div
-          className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border mb-8"
+          className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border mb-8 bg-void"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
-            priority
-          />
+          {!isVideo(post.image) && !post.image.includes("placeholder.jpg") ? (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center p-12 text-center overflow-hidden">
+              {/* Complex background */}
+              <div className="absolute inset-0 opacity-30" style={{
+                backgroundImage: `radial-gradient(circle at 30% 20%, var(--color-gold) 0%, transparent 60%), 
+                                 radial-gradient(circle at 70% 80%, var(--color-dream) 0%, transparent 60%)`
+              }} />
+              <div className="absolute inset-0 bg-void/40 backdrop-blur-[2px]" />
+              <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/carbon-fibre.png")' }} />
+              
+              <div className="relative z-10 space-y-4">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.45 }}
+                  className="font-display text-4xl md:text-6xl font-black text-text-primary leading-tight italic opacity-90"
+                  style={{ textShadow: "0 0 40px rgba(203,162,69,0.2)" }}
+                >
+                  {post.title}
+                </motion.h2>
+              </div>
+            </div>
+          )}
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-dream/5" />
@@ -173,21 +208,43 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
               {post.gallery.map((src, i) => (
                 <motion.button
                   key={src}
-                  className="relative aspect-video rounded-xl overflow-hidden border border-border group cursor-zoom-in"
+                  className="relative aspect-video rounded-xl overflow-hidden border border-border group cursor-zoom-in bg-black"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.35, delay: 0.5 + i * 0.06 }}
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   onClick={() => setLightboxSrc(src)}
                 >
-                  <Image
-                    src={src}
-                    alt={`${post.title} photo ${i + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  {isVideo(src) ? (
+                    <video
+                      src={src}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      muted
+                      loop
+                      playsInline
+                      onMouseOver={(e) => (e.target as HTMLVideoElement).play()}
+                      onMouseOut={(e) => {
+                        const target = e.target as HTMLVideoElement;
+                        target.pause();
+                        target.currentTime = 0;
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      src={src}
+                      alt={`${post.title} photo ${i + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    {isVideo(src) && (
+                      <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Play size={16} className="text-white fill-white ml-0.5" />
+                      </div>
+                    )}
+                  </div>
                 </motion.button>
               ))}
             </div>

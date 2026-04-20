@@ -37,7 +37,7 @@ export const posts: Post[] = [
       "After weeks of hunting for a person to cast in our film, we finally found a person named Shahan Akbar.",
     content: `After weeks of hunting for a person to cast in our film, we finally found a person named Shahan Akbar. He's a close friend of Ziyad's and on top of that he was also really good at acting, so he was a perfect match for our film and we are definitely looking forward to work with him in the future.`,
     tags: ["Pre-Production", "Casting", "Actor"],
-    image: "/images/placeholder.jpg",
+    image: "/images/casting-new.jpeg",
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ export const posts: Post[] = [
       "So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget.",
     content: `So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget and wanted to finish the project as soon as possible and for as cheap as possible. So I used Chat GPT to create a budget sheet for us.`,
     tags: ["Pre-Production", "Budget", "Planning"],
-    image: "/images/placeholder.jpg",
+    image: "/images/budgeting-new.jpg",
   },
   {
     id: 5,
@@ -90,7 +90,7 @@ export const posts: Post[] = [
       "Ziyad had a pair of RGB stick lights which he got from China a year ago.",
     content: `Ziyad had a pair of RGB stick lights which he got from China a year ago, they were pretty high quality lights and we decided to use those as our main key lights for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
-    image: "/images/placeholder.jpg",
+    image: "/images/key-light-new.jpeg",
   },
   {
     id: 7,
@@ -117,7 +117,7 @@ export const posts: Post[] = [
     content: `Today was the first day of our shoot and honestly things were harder than I thought they would be but we still managed to get some of the shots that we needed but we still had much work left for the next day.`,
     tags: ["Production", "Shoot", "Behind the Scenes"],
     image: "/images/shoot-day-1-new.jpeg",
-    gallery: [],
+    gallery: ["/images/shoot-day-1-new.jpeg", "/images/shoot-day-1-alt.jpeg"],
   },
   {
     id: 9,
@@ -144,7 +144,7 @@ export const posts: Post[] = [
       "After the shoot, me and Ziyad sat down to edit our film and we were using Adobe Premiere Pro.",
     content: `After the shoot, me and Ziyad sat down to edit out film and we were using Adobe Premiere Pro for our project and honestly we really had fun doing this although a major part of the work was done by Ziyad because he is pro at this.`,
     tags: ["Post-Production", "Editing", "Adobe Premiere Pro"],
-    image: "/images/placeholder.jpg",
+    image: "/images/editing-new.png",
   },
   {
     id: 11,
@@ -183,7 +183,7 @@ export const posts: Post[] = [
       "After many tries of trying to design a perfect poster for our film ourselves, we were still unable to design a poster that looked professional.",
     content: `After many tries of trying to design a perfect poster for our film ourselves, we were still unable to design a poster that looked professional so we had no choice but to use AI to generate the poster of our film.`,
     tags: ["Distribution", "Poster", "Design"],
-    image: "/images/placeholder.jpg",
+    image: "/images/film-poster-new.jpeg",
     gallery: [],
   },
   {
@@ -210,8 +210,13 @@ export const posts: Post[] = [
       "Today was the long awaited film premiere event and our film was not bad at all if we compare it to the others.",
     content: `Today was the long awaited film premiere event and our film was not bad at all if we compare it to the others, but still we were really impressed by some of the work that our fellow students had done. It was a really fun day I think everyone in our class would agree! the free ice creams, the random fun we had together, the amount of students that gathered to see our work. I can confidently say that the film media club powered event in our school was a huge success! However, Sadly our Actor was unable to attend the event.`,
     tags: ["Premiere", "Event", "Screening"],
-    image: "/images/placeholder.jpg",
-    gallery: [],
+    image: "/images/film-premiere-hero.jpeg",
+    gallery: [
+      "/images/film-premiere-hero.jpeg",
+      "/images/film-premiere-pic.png",
+      "/videos/film-premiere-1.mp4",
+      "/videos/film-premiere-2.mp4",
+    ],
   },
 ];
 
