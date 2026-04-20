@@ -47,8 +47,16 @@ export const posts: Post[] = [
     readTime: "1 min read",
     category: "Pre-Production",
     excerpt:
-      "We used a wide variety of equipment for our film — from a Sony a6400 to an iPhone 13.",
-    content: `We used a wide variety of equipment for our film:\n\n- Standard tripod\n- iPhone 13 (for a few cinematic shots)\n- Two RGB LED Stick lights\n- Two High Wattage LED bulbs\n- Sony a6400 (which was the main camera for our film)`,
+      "As student filmmakers without a stable income, we decided to use whatever gear we already had — and honestly, we think it's more than enough.",
+    content: `We personally think that as student filmmakers who don't have any stable income source of our own, we won't be able to afford renting out high-end camera gear — so we think that we should use whatever we have. I personally believe that we will be able to produce a good quality production with our available gear. Which is an iPhone 15 Pro Max, a Cinepeer CQ5 Gimbal, and a Tripod. However, we will be purchasing some equipment for lighting as that is very important.
+
+Here's the full list of equipment we used for our film:
+
+- iPhone 15 Pro Max (main camera)
+- Cinepeer CQ5 Gimbal (for smooth moving shots)
+- Standard Tripod (for stable, locked-off shots)
+- Two RGB LED Stick lights (Key lights)
+- Two High Wattage LED bulbs (additional lighting)`,
     tags: ["Pre-Production", "Equipment", "Camera"],
     image: "/images/equipment-new.jpeg",
     gallery: ["/images/equipment-new.jpeg", "/images/gimbal-new.jpeg"],
@@ -62,7 +70,11 @@ export const posts: Post[] = [
     category: "Pre-Production",
     excerpt:
       "So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget.",
-    content: `So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget and wanted to finish the project as soon as possible and for as cheap as possible. So I used Chat GPT to create a budget sheet for us.`,
+    content: `So me and Ziyad sat down and thought about the budget for our project and since we are just students we didn't have much of a budget and wanted to finish the project as soon as possible and for as cheap as possible. So I used Chat GPT to create a budget sheet for us.
+
+After some consultation with our Media teacher we came to a conclusion that we need not one but two kinds of lights — a Key light and a Fill light. Sir also told us how we could make a cheap Key light ourselves which would cost around PKR 5K, so that combined with a Fill light would bring the total to around PKR 15K. This was pretty good considering renting the lights was costing around PKR 3K per day — and in case of any reshoots we would have to rent them out again — so buying them outright was clearly the better idea.
+
+After noting down all the budgets we gave the list to ChatGPT to produce a budget sheet. Media Studies is pretty expensive...`,
     tags: ["Pre-Production", "Budget", "Planning"],
     image: "/images/budgeting-new.jpg",
   },
