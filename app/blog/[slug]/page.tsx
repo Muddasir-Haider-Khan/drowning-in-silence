@@ -27,6 +27,7 @@ const categoryColors: Record<string, string> = {
   "Post-Production": "badge-muted",
   Distribution: "badge-muted",
   Premiere: "badge-gold",
+  "Final Product": "badge-gold",
 };
 
 function renderContent(content: string) {

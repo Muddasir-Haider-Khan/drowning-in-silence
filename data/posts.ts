@@ -10,6 +10,7 @@ export interface Post {
   tags: string[];
   image: string;
   gallery?: string[];
+  youtubeId?: string;
 }
 
 export const posts: Post[] = [
@@ -25,6 +26,7 @@ export const posts: Post[] = [
     content: `Now here we are, sitting in our class with our teacher thinking about an Idea for our short film because apparently we were the only group who didn't have an idea yet. Now after watching multiple projects of A levels Graduates we come to a conclusion that we will go for an idea where there will be a guy who will be somewhat in a dream within a dream and will keep trying to turn of the tap for water but he wakes up again and again just to see that the water is still dripping and in the end he just wakes to see that that everything is ok and it was just a dream.`,
     tags: ["Pre-Production", "Concept", "Idea"],
     image: "/images/placeholder.jpg",
+    gallery: ["/images/placeholder.jpg"],
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const posts: Post[] = [
     content: `After weeks of hunting for a person to cast in our film, we finally found a person named Shahan Akbar. He's a close friend of Ziyad's and on top of that he was also really good at acting, so he was a perfect match for our film and we are definitely looking forward to work with him in the future.`,
     tags: ["Pre-Production", "Casting", "Actor"],
     image: "/images/casting-new.jpeg",
+    gallery: ["/images/casting-new.jpeg"],
   },
   {
     id: 3,
@@ -77,6 +80,7 @@ After some consultation with our Media teacher we came to a conclusion that we n
 After noting down all the budgets we gave the list to ChatGPT to produce a budget sheet. Media Studies is pretty expensive...`,
     tags: ["Pre-Production", "Budget", "Planning"],
     image: "/images/budgeting-new.jpg",
+    gallery: ["/images/budgeting-new.jpg"],
   },
   {
     id: 5,
@@ -90,6 +94,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `In the start we were really worried about the lighting of our project and specifically the fill light but thankfully our friend Shahan اکبر (the main actor in our film) had a ring light at his home so he let us use that as a fill light for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
     image: "/images/placeholder.jpg",
+    gallery: ["/images/placeholder.jpg"],
   },
   {
     id: 6,
@@ -103,6 +108,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `Ziyad had a pair of RGB stick lights which he got from China a year ago, they were pretty high quality lights and we decided to use those as our main key lights for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
     image: "/images/key-light-new.jpeg",
+    gallery: ["/images/key-light-new.jpeg"],
   },
   {
     id: 7,
@@ -116,6 +122,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `We Decided to shoot our film in Ziyad's house as it was accessible to everyone and on top of that his parents were away on an international trip so he was home alone, meaning we could shoot our project while having fun.`,
     tags: ["Production", "Location", "Shoot"],
     image: "/images/shoot-location-new.jpeg",
+    gallery: ["/images/shoot-location-new.jpeg"],
   },
   {
     id: 8,
@@ -143,7 +150,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `Finally! Today was the second day of our shoot and I can confidently say that we have captured all the necessary shots we need for our project and honestly, I think our project will turn out to be decent.`,
     tags: ["Production", "Shoot", "Behind the Scenes"],
     image: "/images/shoot-day-2-new.jpeg",
-    gallery: [],
+    gallery: ["/images/shoot-day-2-new.jpeg"],
   },
   {
     id: 10,
@@ -157,6 +164,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `After the shoot, me and Ziyad sat down to edit out film and we were using Adobe Premiere Pro for our project and honestly we really had fun doing this although a major part of the work was done by Ziyad because he is pro at this.`,
     tags: ["Post-Production", "Editing", "Adobe Premiere Pro"],
     image: "/images/editing-new.png",
+    gallery: ["/images/editing-new.png"],
   },
   {
     id: 11,
@@ -170,6 +178,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `So we got to know that our school's film media club event is happening soon so me and Ziyad decided that we will be screening our project in that event alongside other fellow media students. But we still had to take permission from the student council.`,
     tags: ["Distribution", "Event", "Screening"],
     image: "/images/placeholder.jpg",
+    gallery: ["/images/placeholder.jpg"],
   },
   {
     id: 12,
@@ -183,6 +192,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `Surprisingly today we got the news that the film screening has been approved by the admin and all we have to do now is find a sponsor for the SMD screens and a food sponsor if possible. This is great news!`,
     tags: ["Distribution", "Approval", "Event"],
     image: "/images/placeholder.jpg",
+    gallery: ["/images/placeholder.jpg"],
   },
   {
     id: 13,
@@ -196,7 +206,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `After many tries of trying to design a perfect poster for our film ourselves, we were still unable to design a poster that looked professional so we had no choice but to use AI to generate the poster of our film.`,
     tags: ["Distribution", "Poster", "Design"],
     image: "/images/film-poster-new.jpeg",
-    gallery: [],
+    gallery: ["/images/film-poster-new.jpeg"],
   },
   {
     id: 14,
@@ -210,6 +220,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     content: `The sponsor for the SMD screens was handled by another student in our class thankfully so the event was 100% confirmed but we still needed a food sponsor. I reached out multiple companies for a sponsor and honestly not with much hope because sponsoring this event from marketing point of view wasn't actually very beneficial. But luckily I landed a sponsor of ice creams by a company named 'Melado'. They gave us 50 Ice creams in return for some pretty easy deliverables.`,
     tags: ["Distribution", "Sponsorship", "Event"],
     image: "/images/placeholder.jpg",
+    gallery: ["/images/placeholder.jpg"],
   },
   {
     id: 15,
@@ -230,6 +241,23 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
       "/videos/film-premiere-2.mp4",
     ],
   },
+  {
+    id: 16,
+    slug: "final-product",
+    title: "Final Product",
+    date: "April 21",
+    readTime: "2 min read",
+    category: "Final Product",
+    excerpt:
+      "The wait is over! After months of pre-production, filming, and editing, we are proud to present our final short film, 'Drowning In Silence'.",
+    content: `The wait is over! After months of pre-production, filming, and editing, we are proud to present our final short film, 'Drowning In Silence'. This project has been an incredible journey for us as media students, and we've learned so much about the art of storytelling and filmmaking.
+
+We hope you enjoy watching it as much as we enjoyed creating it. Thank you to everyone who supported us throughout this process!`,
+    tags: ["Final Product", "Short Film", "Premiere"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
+    youtubeId: "d2VoTYZ4mCI",
+  },
 ];
 
 export const categories = [
@@ -239,6 +267,7 @@ export const categories = [
   "Post-Production",
   "Distribution",
   "Premiere",
+  "Final Product",
 ];
 
 export function getPostBySlug(slug: string): Post | undefined {

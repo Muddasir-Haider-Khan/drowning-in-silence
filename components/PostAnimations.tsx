@@ -89,22 +89,35 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
       <div className="max-w-3xl mx-auto px-6">
         {/* Hero image or Typographic Hero */}
         <motion.div
-          className="relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border mb-8 bg-void"
+          className="relative rounded-2xl overflow-hidden border border-border mb-8 bg-void"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          {!isVideo(post.image) && !post.image.includes("placeholder.jpg") ? (
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-              priority
-            />
+          {post.image && !post.image.includes("placeholder.jpg") ? (
+            <div className="w-full">
+              {isVideo(post.image) ? (
+                <video
+                  src={post.image}
+                  className="w-full h-auto"
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                />
+              ) : (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
+                  priority
+                />
+              )}
+            </div>
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center p-12 text-center overflow-hidden">
+            <div className="relative h-64 md:h-96 flex items-center justify-center p-12 text-center overflow-hidden">
               {/* Complex background */}
               <div className="absolute inset-0 opacity-30" style={{
                 backgroundImage: `radial-gradient(circle at 30% 20%, var(--color-gold) 0%, transparent 60%), 
@@ -190,8 +203,35 @@ export default function PostAnimations({ post, prev, next, badgeClass, contentHt
           {contentHtml}
         </motion.article>
 
-        {/* Gallery — only shown when post has multiple images */}
-        {post.gallery && post.gallery.length > 1 && (
+        {/* YouTube Video Section */}
+        {post.youtubeId && (
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <Play size={14} className="text-gold" />
+              <span className="text-xs font-mono text-text-muted tracking-widest uppercase">
+                Final Product · Video
+              </span>
+            </div>
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-gold-sm bg-black">
+              <iframe
+                src={`https://www.youtube.com/embed/${post.youtubeId}?rel=0&modestbranding=1&autoplay=0`}
+                title={post.title}
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Gallery — shown when post has any media */}
+        {post.gallery && post.gallery.length > 0 && (
           <motion.div
             className="mt-10"
             initial={{ opacity: 0, y: 16 }}
