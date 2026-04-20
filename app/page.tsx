@@ -7,7 +7,7 @@ import { Camera, Clapperboard, User, ExternalLink, ArrowRight } from "lucide-rea
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
-import AnimatedSection, { StaggerContainer, StaggerChild, FadeIn } from "@/components/AnimatedSection";
+import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
 import PortfolioGallery from "@/components/PortfolioGallery";
 
 const stats = [

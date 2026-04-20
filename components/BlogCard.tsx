@@ -22,7 +22,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
   const badgeClass = categoryColors[post.category] || "badge-muted";
   const isPlaceholder = post.image.includes("placeholder.jpg") || !post.image;
 
-  const TypographyPlaceholder = ({ title, category, className }: { title: string, category: string, className?: string }) => (
+  const TypographyPlaceholder = ({ title, className }: { title: string, className?: string }) => (
     <div className={`relative w-full aspect-[4/3] min-h-[240px] bg-void flex items-center justify-center p-8 overflow-hidden ${className}`}>
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-20" style={{
@@ -61,7 +61,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 style={{ display: 'block' }}
               />
             ) : (
-              <TypographyPlaceholder title={post.title} category={post.category} />
+              <TypographyPlaceholder title={post.title} />
             )}
             {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
