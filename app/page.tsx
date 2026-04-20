@@ -38,17 +38,19 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void" />
           </div>
-          {/* Background orbs */}
+          {/* Background orbs - GPU accelerated */}
           <div className="pointer-events-none absolute inset-0">
             <motion.div
-              className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold/5 blur-3xl"
-              animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-gold/4 blur-[80px]"
+              style={{ willChange: "transform" }}
+              animate={{ y: [0, -30, 0], x: [0, 10, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-dream/8 blur-3xl"
-              animate={{ y: [0, 20, 0], scale: [1, 0.95, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-dream/6 blur-[80px]"
+              style={{ willChange: "transform" }}
+              animate={{ y: [0, 25, 0], x: [0, -10, 0] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
             />
           </div>
 
@@ -65,24 +67,24 @@ export default function HomePage() {
           <div className="relative max-w-4xl mx-auto text-center space-y-8 pt-24 pb-16">
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/8 border border-gold/20 text-xs font-mono text-gold tracking-widest uppercase"
             >
               <motion.span
                 className="w-1.5 h-1.5 rounded-full bg-gold"
-                animate={{ opacity: [1, 0.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                animate={{ opacity: [1, 0.2, 1] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               />
               A2 Media Studies · Film Project
             </motion.div>
 
             {/* Eyebrow */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="font-mono text-sm text-text-muted tracking-widest uppercase"
             >
               Habibullah Wahaaj &amp; Ziyad Baig
@@ -90,18 +92,17 @@ export default function HomePage() {
 
             {/* Main title */}
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-6xl md:text-8xl font-black text-text-primary leading-none tracking-tight text-balance"
             >
               Drowning
               <motion.span
                 className="block text-transparent bg-clip-text bg-gradient-to-br from-gold via-gold-light to-gold-dark"
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.45 }}
-                style={{ textShadow: "0 0 40px rgba(203,162,69,0.4)" }}
+                transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
               >
                 In Silence
               </motion.span>
@@ -109,27 +110,27 @@ export default function HomePage() {
 
             {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.55 }}
+              transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
               className="font-sans text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed text-balance"
             >
-              Hi! My name is Habibullah. This blog serves as a breakdown of our A2 Media Studies project. This project was executed by me and my partner Ziyad Baig.
+              Hi! My name is Habibullah. This blog serves as a breakdown of our A2 Media Studies project — executed by me and my partner Ziyad Baig.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.65 }}
+              transition={{ duration: 0.6, delay: 0.85, ease: "easeOut" }}
               className="flex flex-wrap items-center justify-center gap-4"
             >
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
                 <Link href="/blog" className="btn-gold">
                   Read the Blog <ArrowRight size={16} />
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
                 <a
                   href="https://ziyadbaiga2.weebly.com/"
                   target="_blank"
@@ -141,48 +142,51 @@ export default function HomePage() {
               </motion.div>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats row */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.75 }}
+              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
               className="grid grid-cols-3 gap-4 max-w-sm mx-auto pt-4"
             >
               {stats.map(({ label, value, icon: Icon }, i) => (
                 <motion.div
                   key={label}
-                  className="glass-card p-4 text-center group"
-                  initial={{ opacity: 0, y: 16 }}
+                  className="glass-card p-4 text-center"
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
-                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                  transition={{ duration: 0.4, delay: 1.05 + i * 0.08, ease: "easeOut" }}
+                  whileHover={{ y: -4, transition: { type: "spring", stiffness: 400, damping: 20 } }}
                 >
-                  <Icon size={16} className="text-gold mx-auto mb-2" />
+                  <Icon size={16} className="text-gold mx-auto mb-2 opacity-80" />
                   <div className="font-display text-2xl font-bold text-gold">{value}</div>
                   <div className="text-[10px] font-mono text-text-muted tracking-wider uppercase mt-0.5">{label}</div>
                 </motion.div>
               ))}
             </motion.div>
 
-            {/* Scroll indicator */}
+            {/* Scroll indicator - clean & minimal */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="flex flex-col items-center gap-2 pt-4"
+              transition={{ duration: 1, delay: 1.4 }}
+              className="flex flex-col items-center gap-3 pt-6"
             >
               <motion.div
-                className="w-px h-12 bg-gradient-to-b from-gold/40 to-transparent"
-                animate={{ scaleY: [0, 1, 0], originY: 0 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <span className="text-[10px] font-mono text-text-muted tracking-widest uppercase">Scroll to explore</span>
+                className="w-5 h-8 rounded-full border border-gold/30 flex items-start justify-center pt-1.5"
+              >
+                <motion.div
+                  className="w-1 h-1.5 rounded-full bg-gold/70"
+                  animate={{ y: [0, 10, 0], opacity: [1, 0, 1] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </section>
 
         {/* ── About Section ────────────────────────── */}
-        <section className="relative py-24 px-6">
+        <section className="relative py-28 px-6">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
               <div className="gold-line mb-16" />
@@ -294,7 +298,7 @@ export default function HomePage() {
         <PortfolioGallery />
 
         {/* ── Recent Posts ─────────────────────────── */}
-        <section className="relative py-24 px-6">
+        <section className="relative py-28 px-6 border-t border-border/20">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection delay={0.05}>
               <div className="flex items-end justify-between mb-12">
@@ -334,33 +338,41 @@ export default function HomePage() {
         </section>
 
         {/* ── Partner Blog CTA ─────────────────────── */}
-        <section className="py-24 px-6">
+        <section className="py-28 px-6 border-t border-border/20">
           <div className="max-w-3xl mx-auto">
-            <AnimatedSection delay={0.1} direction="up">
+            <AnimatedSection delay={0.05} direction="up">
               <motion.div
-                className="glass-card p-10 text-center relative overflow-hidden"
-                whileHover={{ boxShadow: "0 8px 60px rgba(124,111,240,0.12), 0 0 0 1px rgba(124,111,240,0.2)" }}
-                transition={{ duration: 0.3 }}
+                className="relative overflow-hidden rounded-3xl border border-dream/20 bg-surface/40 p-12 text-center"
+                style={{ backdropFilter: "blur(24px)" }}
+                whileHover={{ borderColor: "rgba(124,111,240,0.4)", boxShadow: "0 0 60px rgba(124,111,240,0.08)" }}
+                transition={{ duration: 0.4 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-dream/5 to-gold/5 pointer-events-none" />
-                <div className="relative space-y-4">
+                {/* Ambient glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-dream/8 via-transparent to-gold/6 pointer-events-none rounded-3xl" />
+                <motion.div
+                  className="absolute -top-20 left-1/2 -translate-x-1/2 w-60 h-60 rounded-full bg-dream/10 blur-3xl"
+                  animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="relative space-y-5">
                   <span className="text-xs font-mono text-dream-light tracking-widest uppercase badge-dream">
-                    Partner Blog
+                    Also Read
                   </span>
-                  <h2 className="font-display text-3xl font-bold text-text-primary">
-                    Also check out{" "}
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary">
+                    Check out{" "}
                     <span className="text-dream-light italic">Ziyad Baig&apos;s</span> blog
                   </h2>
-                  <p className="text-sm text-text-muted max-w-md mx-auto">
-                    My partner on this A2 Media project also documented his perspective on the entire production journey.
+                  <p className="text-sm text-text-muted max-w-md mx-auto leading-relaxed">
+                    My partner also documented his perspective on the full production journey — from planning to premiere.
                   </p>
                   <motion.a
                     href="https://ziyadbaiga2.weebly.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-outline inline-flex mt-4"
-                    whileHover={{ scale: 1.03 }}
+                    className="btn-outline inline-flex mt-2"
+                    whileHover={{ scale: 1.04, y: -1 }}
                     whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
                   >
                     Visit Ziyad&apos;s Blog <ExternalLink size={14} />
                   </motion.a>
