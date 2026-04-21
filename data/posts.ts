@@ -20,7 +20,7 @@ export const posts: Post[] = [
     title: "Short Films",
     date: "February 09",
     readTime: "1 min read",
-    category: "Pre-Production",
+    category: "Research and Analysis",
     excerpt:
       "A brief history of short films, from Thomas Edison's kinetoscope to the serial comedies of the 1920s.",
     content: `A short film is a film with a low running time. The Academy of Motion Picture Arts and Sciences define a short film which runs only a minute or less. 
@@ -42,7 +42,7 @@ Animated cartoons came principally as short subjects; virtually all major film p
     title: "Codes & Convention",
     date: "February 09",
     readTime: "3 min read",
-    category: "Pre-Production",
+    category: "Research and Analysis",
     excerpt:
       "An in-depth look at the codes and conventions that define short films, from length and storylines to creative opposition to mainstream aesthetics.",
     content: `Short film refers to any film not considered a feature film in terms of length. Although length is the most obvious characterisation of a short film, films of this type will share codes and conventions which separate them from other forms of video.
@@ -86,7 +86,7 @@ All of these codes and conventions largely make short film in opposition to main
     title: "Genre Brainstorming",
     date: "February 09",
     readTime: "2 min read",
-    category: "Pre-Production",
+    category: "Research and Analysis",
     excerpt:
       "Struggling with your first short film idea? Let's brainstorm through the most effective genres for short-form storytelling—from real-time dramas to high-concept sci-fi.",
     content: `Short films can be hard to tackle. You need to find a story that fits in a smaller space and still feels like it has scope and scale.
@@ -122,7 +122,7 @@ The future is so fun to explore, and so are advances in technology. The worldbui
     title: "Target Audience",
     date: "February 09",
     readTime: "1 min read",
-    category: "Pre-Production",
+    category: "Research and Analysis",
     excerpt:
       "Defining the core demographic for 'Drowning in Silence' and exploring the mixed reactions to mental health discussions in our culture.",
     content: `Our project was primarily targeted for the age category of **18-24**. The plan was to create mental health awareness in an age where information is so accessible that basic things are often overlooked. This project was essentially our way of playing a part in raising that awareness.
@@ -380,6 +380,7 @@ We hope you enjoy watching it as much as we enjoyed creating it. Thank you to ev
 
 export const categories = [
   "All",
+  "Research and Analysis",
   "Pre-Production",
   "Production",
   "Post-Production",
