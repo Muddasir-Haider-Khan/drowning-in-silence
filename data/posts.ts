@@ -113,8 +113,8 @@ These genres work very well in short format because you can plant suspense very 
 ### Science Fiction
 The future is so fun to explore, and so are advances in technology. The worldbuilding here is limitless, just get it across fast. Shorts don't usually have big budgets, but you can spend wisely here and show your vision, especially for a proof of concept.`,
     tags: ["Research", "Short Films", "Genres", "Brainstorming"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 4,
@@ -129,8 +129,8 @@ The future is so fun to explore, and so are advances in technology. The worldbui
 
 At the film premiere, we received mixed reviews. Some audience members were glad that these issues were being discussed openly, while others showed visible discomfort. We believe this reaction is completely valid, as mental health is often a taboo subject that isn't talked about enough in our local cultures.`,
     tags: ["Research", "Target Audience", "Mental Health", "Awareness"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 5,
@@ -143,8 +143,8 @@ At the film premiere, we received mixed reviews. Some audience members were glad
       "Now here we are, sitting in our class with our teacher thinking about an Idea for our short film because apparently we were the only group who didn't have an idea yet.",
     content: `Now here we are, sitting in our class with our teacher thinking about an Idea for our short film because apparently we were the only group who didn't have an idea yet. Now after watching multiple projects of A levels Graduates we come to a conclusion that we will go for an idea where there will be a guy who will be somewhat in a dream within a dream and will keep trying to turn of the tap for water but he wakes up again and again just to see that the water is still dripping and in the end he just wakes to see that that everything is ok and it was just a dream.`,
     tags: ["Pre-Production", "Concept", "Idea"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 6,
@@ -211,8 +211,8 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
       "In the start we were really worried about the lighting of our project and specifically the fill light.",
     content: `In the start we were really worried about the lighting of our project and specifically the fill light but thankfully our friend Shahan اکبر (the main actor in our film) had a ring light at his home so he let us use that as a fill light for our film.`,
     tags: ["Pre-Production", "Lighting", "Equipment"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 10,
@@ -295,8 +295,8 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
       "So we got to know that our school's film media club event is happening soon.",
     content: `So we got to know that our school's film media club event is happening soon so me and Ziyad decided that we will be screening our project in that event alongside other fellow media students. But we still had to take permission from the student council.`,
     tags: ["Distribution", "Event", "Screening"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 16,
@@ -309,8 +309,8 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
       "Surprisingly today we got the news that the film screening has been approved by the admin.",
     content: `Surprisingly today we got the news that the film screening has been approved by the admin and all we have to do now is find a sponsor for the SMD screens and a food sponsor if possible. This is great news!`,
     tags: ["Distribution", "Approval", "Event"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 17,
@@ -337,8 +337,8 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
       "The sponsor for the SMD screens was handled by another student in our class thankfully so the event was 100% confirmed.",
     content: `The sponsor for the SMD screens was handled by another student in our class thankfully so the event was 100% confirmed but we still needed a food sponsor. I reached out multiple companies for a sponsor and honestly not with much hope because sponsoring this event from marketing point of view wasn't actually very beneficial. But luckily I landed a sponsor of ice creams by a company named 'Melado'. They gave us 50 Ice creams in return for some pretty easy deliverables.`,
     tags: ["Distribution", "Sponsorship", "Event"],
-    image: "/images/placeholder.jpg",
-    gallery: ["/images/placeholder.jpg"],
+    image: "/images/hero-bg.jpg",
+    gallery: ["/images/hero-bg.jpg"],
   },
   {
     id: 19,
