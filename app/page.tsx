@@ -11,7 +11,7 @@ import AnimatedSection, { FadeIn } from "@/components/AnimatedSection";
 import PortfolioGallery from "@/components/PortfolioGallery";
 
 const stats = [
-  { label: "Blog Posts", value: "15", icon: Clapperboard },
+  { label: "Blog Posts", value: posts.length.toString().padStart(2, "0"), icon: Clapperboard },
   { label: "Shoot Days", value: "02", icon: Camera },
   { label: "Days Total", value: "03", icon: User },
 ];
