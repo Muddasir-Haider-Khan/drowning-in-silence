@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: Record<string, string> = {
+  "Research and Analysis": "badge-gold",
   "Pre-Production": "badge-dream",
   Production: "badge-gold",
   "Post-Production": "badge-muted",
@@ -31,26 +32,94 @@ const categoryColors: Record<string, string> = {
 };
 
 function renderContent(content: string) {
-  const parts = content.split("\n\n");
-  return parts.map((part, i) => {
-    if (part.startsWith("- ") || part.includes("\n- ")) {
-      const items = part.split("\n").filter((l) => l.startsWith("- "));
-      return (
-        <ul key={i} className="list-none space-y-2 my-4">
-          {items.map((item, j) => (
-            <li key={j} className="flex items-start gap-3 text-text-secondary text-base">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-              {item.replace("- ", "")}
-            </li>
-          ))}
-        </ul>
-      );
+  // Helper to handle bold text
+  const parseInline = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <strong key={i} className="text-gold font-bold">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      return part;
+    });
+  };
+
+  const lines = content.split("\n");
+  const blocks: any[] = [];
+  let currentList: string[] = [];
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      blocks.push({ type: "list", items: [...currentList] });
+      currentList = [];
     }
-    return (
-      <p key={i} className="text-text-secondary text-base leading-relaxed">
-        {part}
-      </p>
-    );
+  };
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("### ")) {
+      flushList();
+      blocks.push({ type: "h3", text: trimmed.replace("### ", "") });
+    } else if (trimmed.startsWith("- ")) {
+      currentList.push(trimmed.replace("- ", ""));
+    } else if (trimmed === "") {
+      flushList();
+      // Add a null marker to ensure next paragraph starts fresh
+      blocks.push({ type: "break" });
+    } else {
+      const lastBlock = blocks[blocks.length - 1];
+      if (lastBlock && lastBlock.type === "p") {
+        lastBlock.text += " " + trimmed;
+      } else {
+        flushList();
+        blocks.push({ type: "p", text: trimmed });
+      }
+    }
+  });
+  flushList();
+
+  return blocks.map((block, i) => {
+    if (block.type === "break") return null;
+
+    switch (block.type) {
+      case "h3":
+        return (
+          <h3
+            key={i}
+            className="font-display text-2xl font-black text-gold mt-10 mb-4 first:mt-0"
+          >
+            {parseInline(block.text)}
+          </h3>
+        );
+      case "list":
+        return (
+          <ul key={i} className="list-none space-y-3 my-6">
+            {block.items.map((item, j) => (
+              <li
+                key={j}
+                className="flex items-start gap-3 text-text-secondary text-base"
+              >
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold/60 flex-shrink-0" />
+                <span>{parseInline(item)}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      case "p":
+        return (
+          <p
+            key={i}
+            className="text-text-secondary text-base leading-relaxed mb-4 last:mb-0"
+          >
+            {parseInline(block.text)}
+          </p>
+        );
+      default:
+        return null;
+    }
   });
 }
 
