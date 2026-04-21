@@ -30,6 +30,14 @@ const categoryColors: Record<string, string> = {
   "Final Product": "badge-gold",
 };
 
+type BlockType = "h3" | "list" | "p" | "break";
+
+interface ContentBlock {
+  type: BlockType;
+  text?: string;
+  items?: string[];
+}
+
 function renderContent(content: string) {
   // Helper to handle bold text
   const parseInline = (text: string) => {
@@ -47,7 +55,7 @@ function renderContent(content: string) {
   };
 
   const lines = content.split("\n");
-  const blocks: any[] = [];
+  const blocks: ContentBlock[] = [];
   let currentList: string[] = [];
 
   const flushList = () => {
@@ -71,7 +79,7 @@ function renderContent(content: string) {
     } else {
       const lastBlock = blocks[blocks.length - 1];
       if (lastBlock && lastBlock.type === "p") {
-        lastBlock.text += " " + trimmed;
+        lastBlock.text = (lastBlock.text || "") + " " + trimmed;
       } else {
         flushList();
         blocks.push({ type: "p", text: trimmed });
@@ -80,7 +88,7 @@ function renderContent(content: string) {
   });
   flushList();
 
-  return blocks.map((block: any, i: number) => {
+  return blocks.map((block: ContentBlock, i: number) => {
     if (block.type === "break") return null;
 
     switch (block.type) {
@@ -90,13 +98,13 @@ function renderContent(content: string) {
             key={i}
             className="font-display text-2xl font-black text-gold mt-10 mb-4 first:mt-0"
           >
-            {parseInline(block.text)}
+            {parseInline(block.text || "")}
           </h3>
         );
       case "list":
         return (
           <ul key={i} className="list-none space-y-3 my-6">
-            {block.items.map((item: string, j: number) => (
+            {block.items?.map((item: string, j: number) => (
               <li
                 key={j}
                 className="flex items-start gap-3 text-text-secondary text-base"
@@ -113,7 +121,7 @@ function renderContent(content: string) {
             key={i}
             className="text-text-secondary text-base leading-relaxed mb-4 last:mb-0"
           >
-            {parseInline(block.text)}
+            {parseInline(block.text || "")}
           </p>
         );
       default:
