@@ -230,6 +230,19 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
   },
   {
     id: 11,
+    slug: "story-board",
+    title: "Story Board",
+    date: "February 22",
+    readTime: "1 min read",
+    category: "Pre-Production",
+    excerpt: "A visual walkthrough of our film's narrative, detailing every shot and sequence to ensure a smooth production process.",
+    content: `here is our story board`,
+    tags: ["Pre-Production", "Storyboard", "Planning"],
+    image: "/images/story-board.jpg",
+    gallery: ["/images/story-board.jpg"],
+  },
+  {
+    id: 12,
     slug: "shoot-location",
     title: "Shoot Location",
     date: "February 22",
@@ -243,7 +256,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/shoot-location-new.jpeg"],
   },
   {
-    id: 12,
+    id: 13,
     slug: "shoot-day-1",
     title: "Shoot Day 1",
     date: "February 22",
@@ -257,7 +270,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/shoot-day-1-new.jpeg", "/images/shoot-day-1-alt.jpeg"],
   },
   {
-    id: 13,
+    id: 14,
     slug: "shoot-day-2",
     title: "Shoot Day 2",
     date: "February 22",
@@ -271,7 +284,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/shoot-day-2-new.jpeg"],
   },
   {
-    id: 14,
+    id: 15,
     slug: "post-production",
     title: "Post Production",
     date: "February 22",
@@ -285,7 +298,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/editing-new.png"],
   },
   {
-    id: 15,
+    id: 16,
     slug: "a-media-club-powered-event",
     title: "A Media Club Powered Event",
     date: "February 23",
@@ -299,7 +312,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/hero-bg.jpg"],
   },
   {
-    id: 16,
+    id: 17,
     slug: "film-screening-approval",
     title: "Film Screening Approval",
     date: "February 23",
@@ -313,7 +326,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/hero-bg.jpg"],
   },
   {
-    id: 17,
+    id: 18,
     slug: "poster-crisis",
     title: "Poster Crisis",
     date: "February 23",
@@ -327,7 +340,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/film-poster-new.jpeg"],
   },
   {
-    id: 18,
+    id: 19,
     slug: "sponsor-for-the-film-premiere",
     title: "Sponsor for the Film Premiere",
     date: "February 23",
@@ -341,7 +354,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     gallery: ["/images/hero-bg.jpg"],
   },
   {
-    id: 19,
+    id: 20,
     slug: "the-film-premiere",
     title: "The Film Premiere",
     date: "February 23",
@@ -360,7 +373,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     ],
   },
   {
-    id: 20,
+    id: 21,
     slug: "final-product",
     title: "Final Product",
     date: "April 21",
@@ -369,7 +382,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     excerpt:
       "The wait is over! After months of pre-production, filming, and editing, we are proud to present our final short film, 'Drowning In Silence'.",
     content: `The wait is over! After months of pre-production, filming, and editing, we are proud to present our final short film, 'Drowning In Silence'. This project has been an incredible journey for us as media students, and we've learned so much about the art of storytelling and filmmaking.
-
+    
 We hope you enjoy watching it as much as we enjoyed creating it. Thank you to everyone who supported us throughout this process!`,
     tags: ["Final Product", "Short Film", "Premiere"],
     image: "/images/hero-bg.jpg",
