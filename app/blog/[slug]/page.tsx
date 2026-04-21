@@ -34,7 +34,7 @@ function renderContent(content: string) {
   // Helper to handle bold text
   const parseInline = (text: string) => {
     const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, i) => {
+    return parts.map((part: string, i: number) => {
       if (part.startsWith("**") && part.endsWith("**")) {
         return (
           <strong key={i} className="text-gold font-bold">
@@ -57,7 +57,7 @@ function renderContent(content: string) {
     }
   };
 
-  lines.forEach((line) => {
+  lines.forEach((line: string) => {
     const trimmed = line.trim();
     if (trimmed.startsWith("### ")) {
       flushList();
@@ -80,7 +80,7 @@ function renderContent(content: string) {
   });
   flushList();
 
-  return blocks.map((block, i) => {
+  return blocks.map((block: any, i: number) => {
     if (block.type === "break") return null;
 
     switch (block.type) {
@@ -96,7 +96,7 @@ function renderContent(content: string) {
       case "list":
         return (
           <ul key={i} className="list-none space-y-3 my-6">
-            {block.items.map((item, j) => (
+            {block.items.map((item: string, j: number) => (
               <li
                 key={j}
                 className="flex items-start gap-3 text-text-secondary text-base"
