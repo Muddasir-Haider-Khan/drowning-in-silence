@@ -346,7 +346,7 @@ After noting down all the budgets we gave the list to ChatGPT to produce a budge
     title: "The Film Premiere",
     date: "February 23",
     readTime: "1 min read",
-    category: "Premiere",
+    category: "Distribution",
     excerpt:
       "Today was the long awaited film premiere event and our film not bad at all if we compare it to the others.",
     content: `Today was the long awaited film premiere event and our film not bad at all if we compare it to the others, but still we were really impressed by some of the work that our fellow students had done. It was a really fun day I think everyone in our class would agree! the free ice creams, the random fun we had together, the amount of students that gathered to see our work. I can confidently say that the film media club powered event in our school was a huge success! However, Sadly our Actor was unable to attend the event.`,
@@ -385,7 +385,6 @@ export const categories = [
   "Production",
   "Post-Production",
   "Distribution",
-  "Premiere",
   "Final Product",
 ];
 
